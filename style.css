@@ -13,10 +13,22 @@
     left: calc(50% - 100px);
     transform-style: preserve-3d;
     transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+}
+@keyframes  autoRun{
+    from{
+        transform: perspective(1000px) rotate(-16deg) rotate(0deg);
+    }to{
+        transform: perspective(1000px) rotate(-16deg) rotate(360deg);
+    }
 }
 .banner .slider .item{
     position: absolute;
     inset: 0 0 0 0 ;
+    transform: 
+    rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+    translateZ(180px);
+    transform: translateZ(550px);
 }
 .banner .slider .item img{
     width: 100%;
